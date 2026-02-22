@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bws18egqg15gc"]
+
+[ext_resource type="PackedScene" uid="uid://dx8d1fih061yh" path="res://characters/base_character.tscn" id="1_dv2ns"]
+[ext_resource type="Script" uid="uid://di5kk5h0m4qau" path="res://characters/blue_character.gd" id="2_4d3ue"]
+[ext_resource type="PackedScene" uid="uid://2pcqemg2ppr6" path="res://resource_bar.tscn" id="3_edw22"]
+
+[node name="BlueCharacter" unique_id=1793590757 instance=ExtResource("1_dv2ns")]
+collision_mask = 3
+script = ExtResource("2_4d3ue")
+speed = 300.0
+health = 500.0
+SCALE = 0.5
+
+[node name="Sprite2D" parent="." index="0" unique_id=303376296]
+modulate = Color(0, 0.3529412, 0.9764706, 1)
+
+[node name="ResourceBar" parent="." index="2" unique_id=1440410947 instance=ExtResource("3_edw22")]
+position = Vector2(0, 77)

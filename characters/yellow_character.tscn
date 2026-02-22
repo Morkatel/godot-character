@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bltdmqs74uyia"]
+
+[ext_resource type="PackedScene" uid="uid://dx8d1fih061yh" path="res://characters/base_character.tscn" id="1_b6a6g"]
+[ext_resource type="Script" uid="uid://ckrh2lxrr55uh" path="res://characters/yellow_character.gd" id="2_6ynhf"]
+
+[node name="BaseCharacter" unique_id=1793590757 instance=ExtResource("1_b6a6g")]
+collision_layer = 2
+script = ExtResource("2_6ynhf")
+
+[node name="Sprite2D" parent="." index="0" unique_id=303376296]
+modulate = Color(1, 0.9137255, 0, 1)

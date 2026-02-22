@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://po12fvl8vnur"]
+
+[ext_resource type="Script" uid="uid://drpbi0gbtlf3o" path="res://level_one.gd" id="1_ojold"]
+
+[node name="LevelOne" type="Node2D" unique_id=589201862]
+script = ExtResource("1_ojold")

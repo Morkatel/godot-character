@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://j40hqk6g7x2t"]
+
+[ext_resource type="PackedScene" uid="uid://dx8d1fih061yh" path="res://characters/base_character.tscn" id="1_gubwm"]
+[ext_resource type="Script" uid="uid://bu16iok5x6uwv" path="res://characters/green_character.gd" id="2_23g1l"]
+
+[node name="GreenCharacter" unique_id=1793590757 instance=ExtResource("1_gubwm")]
+modulate = Color(1.732707e-06, 0.8656796, 0, 1)
+collision_layer = 2
+script = ExtResource("2_23g1l")
