@@ -6,7 +6,7 @@ const DEFAULT_SPEED := 500.0
 @export var speed: float = DEFAULT_SPEED
 @export var health: float = 500.0
 
-var buff_effect_list: Array[BuffEffectInstance]
+var buff_effect_list: Array[BuffEffect]
 
 func _ready() -> void:
 	scale *= SCALE
@@ -28,14 +28,14 @@ func _process(delta: float) -> void:
 		
 func apply_buffs(delta: float) -> void:
 	for i in range(buff_effect_list.size() - 1, -1, -1):
-		var b := buff_effect_list[i]
+		var b: BuffEffect = buff_effect_list[i]
 		
 		# 2. Update hook
-		b.strategy.on_update(self , delta)
+		b.on_update(self , delta)
 		
 		# 3. Teardown hook
-		if !b.strategy.has_time_left():
-			b.strategy.on_remove(self )
+		if !b.has_time_left():
+			b.on_remove(self )
 			buff_effect_list.remove_at(i)
 
 func _move_logic(delta: float) -> void:
@@ -47,6 +47,5 @@ func _on_area_entered(area: Area2D) -> void:
 	print("Blue handler")
 
 func buff(effect: BuffEffect):
-	var b = BuffEffectInstance.new(effect)
-	b.strategy.on_apply(self )
-	buff_effect_list.append(b)
+	effect.on_apply(self )
+	buff_effect_list.append(effect)
